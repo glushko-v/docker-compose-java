@@ -1,0 +1,26 @@
+version: '3'
+volumes: 
+    share:
+services:
+    package:
+        build: .
+        volumes:
+            - share:/usr/boxfuse/target
+   
+                
+    prod:
+        image: tomcat:8
+        ports:
+            - "8080:8080"
+        volumes_from: 
+            - package
+        volumes:
+            - share:/usr/local/tomcat/webapps
+
+
+
+        
+
+
+    
+        
