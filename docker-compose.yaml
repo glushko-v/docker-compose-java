@@ -9,11 +9,11 @@ services:
    
                 
     prod:
-        image: tomcat:8
+        image: tomcat:6
         ports:
             - "8080:8080"
-        volumes_from: 
-            - package
+#        volumes_from: 
+#            - package
         volumes:
             - share:/usr/local/tomcat/webapps
 
